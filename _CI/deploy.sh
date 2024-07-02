@@ -6,8 +6,8 @@ if [[ -d "infra" ]]; then
 
     npm run cdk deploy -- \
         --context name=${APPLICATION_NAME} \
-        --context accountId=${AWS_ACCOUNT_ID} \
-        --context region=${AWS_REGION} \
+        --context accountId=975050052132 \
+        --context region=eu-north-1 \
         --context apiKey=${API_KEY} \
         --context applicationTag=${APPLICATION_TAG} \
         --all \
