@@ -13,9 +13,9 @@ if [[ -d "infra" ]]; then
 
     npm run cdk synth -- \
         --quiet \
-        --context name=selenium-lambda \
-        --context accountId=975050052132 \
-        --context region=eu-north-1 \
+        --context name=${APPLICATION_NAME} \
+        --context accountId=${AWS_ACCOUNT_ID} \
+        --context region=${AWS_REGION} \
         --context apiKey=${API_KEY} \
         --context applicationTag=${APPLICATION_TAG}
 fi
