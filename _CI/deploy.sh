@@ -5,7 +5,7 @@ if [[ -d "infra" ]]; then
     cd infra
 
     npm run cdk deploy -- \
-        --context name=${APPLICATION_NAME} \
+        --context name=selenium-lambda \
         --context accountId=975050052132 \
         --context region=eu-north-1 \
         --context apiKey=${API_KEY} \
