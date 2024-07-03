@@ -5,8 +5,8 @@ on:
     branches: ["main"]
 env:
   CDK_VERSION: "2.126.0"
-  AWS_ACCOUNT_ID: 975050052132
-  AWS_REGION: eu-north-1
+  AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+  AWS_REGION: ${{ secrets.AWS_REGION }}
   API_KEY: ${{ secrets.API_KEY }}  
   APPLICATION_TAG: ${{ vars.APPLICATION_TAG }}
   APPLICATION_NAME: "selenium-lambda"
@@ -27,9 +27,9 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::975050052132:role/otto
+          role-to-assume: ${{ secrets.AWS_ASSUME_ROLE_ARN }}
           role-session-name: github-action-role
-          aws-region: eu-north-1
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Bootstrap
         run: |
